@@ -33,7 +33,10 @@ import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.model.Section;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Collections;
 import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.jsp.SkipPageException;
 
 final public class SectionImpl {
 
@@ -42,13 +45,29 @@ final public class SectionImpl {
 		ElementContext context,
 		Section section,
 		PageIndex pageIndex
-	) throws IOException {
+	) throws IOException, ServletException, SkipPageException {
 		// If this is the first section in the page, write the table of contents
 		Page page = section.getPage();
 		if(page != null) {
 			List<? extends Section> topLevelSections = page.findTopLevelElements(Section.class);
 			if(!topLevelSections.isEmpty() && topLevelSections.get(0) == section) {
-				context.include("/semanticcms-section-servlet/toc.inc.jspx", out);
+				try {
+					context.include(
+						"/semanticcms-section-servlet/toc.inc.jspx",
+						out,
+						Collections.singletonMap("page", (Object)page)
+					);
+				} catch(IOException e) {
+					throw e;
+				} catch(ServletException e) {
+					throw e;
+				} catch(SkipPageException e) {
+					throw e;
+				} catch(RuntimeException e) {
+					throw e;
+				} catch(Exception e) {
+					throw new ServletException(e);
+				}
 			}
 		}
 		// Count the section level by finding all sections in the parent elements
