@@ -24,8 +24,8 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 <!--
 The table of contents for a single page.
 
-Request-scope variables:
-	docsTocPage  The page that should have its table of contents displayed.
+Arguments:
+	arg.page  The page that should have its table of contents displayed.
 -->
 <jsp:root
 	xmlns:ao="http://aoindustries.com/ao-taglib"
@@ -36,95 +36,100 @@ Request-scope variables:
 	version="2.1"
 >
 	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
-	<c:set var="page" value="${requestScope.docsTocPage}" />
+	<c:set var="page" value="${arg.page}" />
 	<!-- Use explicit toc setting or determine auto mode.  In auto mode show when >= 3 total sections in page. -->
-	<c:set var="includeToc" value="${
+	<c:if test="${
 		page.toc==null
 		? (fn:length(p:filterElements(page, 'com.semanticcms.section.model.Section')) ge 3)
 		: page.toc
-	}" />
-	<c:if test="${includeToc}">
+	}">
 		<c:set var="pageSections" value="${p:findTopLevelElements(page, 'com.semanticcms.section.model.Section')}" />
 		<c:if test="${!empty pageSections}">
-		<nav class="toc">
-			<!-- Is it OK to put h1 inside nav, this was div before? -->
-			<!-- Using h2 instead of h1 because it seems more compatible with pre-HTML5 agents -->
-			<h2 class="tocHeader">Contents</h2>
-			<!-- Write h2 headings -->
-			<ol class="toc1ol">
-				<c:forEach var="h2" items="${pageSections}" varStatus="h2Status">
-					<li class="toc1li">
-						<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h2.id))}">
-							<ao:out value="${h2Status.index+1}" />
-							<ao:out value="${h2.label}" />
-						</ao:a>
-						<c:if test="${page.tocLevels ge 2}">
-							<c:set var="h2Sections" value="${p:findTopLevelElements(h2, 'com.semanticcms.section.model.Section')}" />
-							<c:if test="${!empty h2Sections}">
-								<!-- Write h3 headings -->
-								<ol class="toc2ol">
-									<c:forEach var="h3" items="${h2Sections}" varStatus="h3Status">
-										<li class="toc2li">
-											<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h3.id))}">
-												<ao:out value="${h2Status.index+1}.${h3Status.index+1}" />
-												<ao:out value="${h3.label}" />
-											</ao:a>
-											<c:if test="${page.tocLevels ge 3}">
-												<c:set var="h3Sections" value="${p:findTopLevelElements(h3, 'com.semanticcms.section.model.Section')}" />
-												<c:if test="${!empty h3Sections}">
-													<!-- Write h4 headings -->
-													<ol class="toc3ol">
-														<c:forEach var="h4" items="${h3Sections}" varStatus="h4Status">
-															<li class="toc3li">
-																<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h4.id))}">
-																	<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}" />
-																	<ao:out value="${h4.label}" />
-																</ao:a>
-																<c:if test="${page.tocLevels ge 4}">
-																	<c:set var="h4Sections" value="${p:findTopLevelElements(h4, 'com.semanticcms.section.model.Section')}" />
-																	<c:if test="${!empty h4Sections}">
-																		<!-- Write h5 headings -->
-																		<ol class="toc4ol">
-																			<c:forEach var="h5" items="${h4Sections}" varStatus="h5Status">
-																				<li class="toc4li">
-																					<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h5.id))}">
-																						<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}" />
-																						<ao:out value="${h5.label}" />
-																					</ao:a>
-																					<c:if test="${page.tocLevels ge 5}">
-																						<c:set var="h5Sections" value="${p:findTopLevelElements(h5, 'com.semanticcms.section.model.Section')}" />
-																						<c:if test="${!empty h5Sections}">
-																							<!-- Write h6 headings -->
-																							<ol class="toc5ol">
-																								<c:forEach var="h6" items="${h5Sections}" varStatus="h6Status">
-																									<li class="toc5li">
-																										<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h6.id))}">
-																											<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}.${h6Status.index+1}" />
-																											<ao:out value="${h6.label}" />
-																										</ao:a>
-																									</li>
-																								</c:forEach>
-																							</ol>
+			<nav class="toc">
+				<!-- Is it OK to put h1 inside nav, this was div before? -->
+				<!-- Using h2 instead of h1 because it seems more compatible with pre-HTML5 agents -->
+				<h2 class="tocHeader">Contents</h2>
+				<!-- Write h2 headings -->
+				<ol class="toc1ol">
+					<c:forEach var="h2" items="${pageSections}" varStatus="h2Status">
+						<li class="toc1li">
+							<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h2.id))}">
+								<ao:out value="${h2Status.index+1}" />
+								<ao:out value=" " />
+								<ao:out value="${h2.label}" />
+							</ao:a>
+							<c:if test="${page.tocLevels ge 2}">
+								<c:set var="h2Sections" value="${p:findTopLevelElements(h2, 'com.semanticcms.section.model.Section')}" />
+								<c:if test="${!empty h2Sections}">
+									<!-- Write h3 headings -->
+									<ol class="toc2ol">
+										<c:forEach var="h3" items="${h2Sections}" varStatus="h3Status">
+											<li class="toc2li">
+												<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h3.id))}">
+													<ao:out value="${h2Status.index+1}.${h3Status.index+1}" />
+													<ao:out value=" " />
+													<ao:out value="${h3.label}" />
+												</ao:a>
+												<c:if test="${page.tocLevels ge 3}">
+													<c:set var="h3Sections" value="${p:findTopLevelElements(h3, 'com.semanticcms.section.model.Section')}" />
+													<c:if test="${!empty h3Sections}">
+														<!-- Write h4 headings -->
+														<ol class="toc3ol">
+															<c:forEach var="h4" items="${h3Sections}" varStatus="h4Status">
+																<li class="toc3li">
+																	<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h4.id))}">
+																		<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}" />
+																		<ao:out value=" " />
+																		<ao:out value="${h4.label}" />
+																	</ao:a>
+																	<c:if test="${page.tocLevels ge 4}">
+																		<c:set var="h4Sections" value="${p:findTopLevelElements(h4, 'com.semanticcms.section.model.Section')}" />
+																		<c:if test="${!empty h4Sections}">
+																			<!-- Write h5 headings -->
+																			<ol class="toc4ol">
+																				<c:forEach var="h5" items="${h4Sections}" varStatus="h5Status">
+																					<li class="toc4li">
+																						<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h5.id))}">
+																							<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}" />
+																							<ao:out value=" " />
+																							<ao:out value="${h5.label}" />
+																						</ao:a>
+																						<c:if test="${page.tocLevels ge 5}">
+																							<c:set var="h5Sections" value="${p:findTopLevelElements(h5, 'com.semanticcms.section.model.Section')}" />
+																							<c:if test="${!empty h5Sections}">
+																								<!-- Write h6 headings -->
+																								<ol class="toc5ol">
+																									<c:forEach var="h6" items="${h5Sections}" varStatus="h6Status">
+																										<li class="toc5li">
+																											<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h6.id))}">
+																												<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}.${h6Status.index+1}" />
+																												<ao:out value=" " />
+																												<ao:out value="${h6.label}" />
+																											</ao:a>
+																										</li>
+																									</c:forEach>
+																								</ol>
+																							</c:if>
 																						</c:if>
-																					</c:if>
-																				</li>
-																			</c:forEach>
-																		</ol>
+																					</li>
+																				</c:forEach>
+																			</ol>
+																		</c:if>
 																	</c:if>
-																</c:if>
-															</li>
-														</c:forEach>
-													</ol>
+																</li>
+															</c:forEach>
+														</ol>
+													</c:if>
 												</c:if>
-											</c:if>
-										</li>
-									</c:forEach>
-								</ol>
+											</li>
+										</c:forEach>
+									</ol>
+								</c:if>
 							</c:if>
-						</c:if>
-					</li>
-				</c:forEach>
-			</ol>
-		</nav>
+						</li>
+					</c:forEach>
+				</ol>
+			</nav>
+		</c:if>
 	</c:if>
 </jsp:root>
