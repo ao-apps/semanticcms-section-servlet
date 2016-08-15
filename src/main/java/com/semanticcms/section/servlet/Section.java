@@ -81,7 +81,7 @@ public class Section extends Element<com.semanticcms.section.model.Section> {
 	}
 
 	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException {
+	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeSection(out, context, element, pageIndex);
 	}
 }
