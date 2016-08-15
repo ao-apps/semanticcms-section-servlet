@@ -55,7 +55,7 @@ final public class SectionImpl {
 					context.include(
 						"/semanticcms-section-servlet/toc.inc.jspx",
 						out,
-						Collections.singletonMap("page", (Object)page)
+						Collections.singletonMap("page", page)
 					);
 				} catch(IOException e) {
 					throw e;
