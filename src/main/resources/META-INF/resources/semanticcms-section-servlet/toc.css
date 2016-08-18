@@ -1,0 +1,77 @@
+/*
+ * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
+ * Copyright (C) 2013, 2014, 2016  AO Industries, Inc.
+ *     support@aoindustries.com
+ *     7262 Bull Pen Cir
+ *     Mobile, AL 36695
+ *
+ * This file is part of semanticcms-section-servlet.
+ *
+ * semanticcms-section-servlet is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * semanticcms-section-servlet is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/licenses/>.
+ */
+.semanticcms-section-toc {
+	clear: both;
+	float: left;
+	border: 1px solid #c0c0c0;
+	background-color: #f0f4ff;
+	padding: 6px;
+	margin-bottom: 1em;
+	font-size: smaller;
+}
+h2.semanticcms-section-toc-header {
+	font-size: inherit; /* CSS3 - don't care about old IE */
+	border: none;
+	margin: 0px;
+	font-weight:bold;
+	text-align:center;
+}
+.semanticcms-section-toc1ol,
+.semanticcms-section-toc2ol,
+.semanticcms-section-toc3ol,
+.semanticcms-section-toc4ol,
+.semanticcms-section-toc5ol {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+.semanticcms-section-toc1li a,
+.semanticcms-section-toc2li a,
+.semanticcms-section-toc3li a,
+.semanticcms-section-toc4li a,
+.semanticcms-section-toc5li a {
+	text-decoration: none;
+}
+.semanticcms-section-toc1li a:hover,
+.semanticcms-section-toc2li a:hover,
+.semanticcms-section-toc3li a:hover,
+.semanticcms-section-toc4li a:hover,
+.semanticcms-section-toc5li a:hover {
+	text-decoration: underline;
+}
+.semanticcms-section-toc1li {
+	margin-left: 0em;
+}
+.semanticcms-section-toc2li,
+.semanticcms-section-toc3li,
+.semanticcms-section-toc4li,
+.semanticcms-section-toc5li {
+	margin-left: 2em;
+}
+.semanticcms-section-toc1li,
+.semanticcms-section-toc2li,
+.semanticcms-section-toc3li,
+.semanticcms-section-toc4li,
+.semanticcms-section-toc5li {
+	margin-top: 2px;
+}
