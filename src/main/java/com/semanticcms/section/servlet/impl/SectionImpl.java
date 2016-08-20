@@ -54,7 +54,7 @@ final public class SectionImpl {
 		// If this is the first section in the page, write the table of contents
 		Page page = section.getPage();
 		if(page != null) {
-			List<? extends Section> topLevelSections = page.findTopLevelElements(Section.class);
+			List<Section> topLevelSections = page.findTopLevelElements(Section.class);
 			if(!topLevelSections.isEmpty() && topLevelSections.get(0) == section) {
 				try {
 					context.include(
