@@ -40,11 +40,6 @@ import javax.servlet.jsp.SkipPageException;
 
 final public class SectionImpl {
 
-	/**
-	 * The CSS link for default styles.
-	 */
-	public static final String CSS_LINK = "/semanticcms-section-servlet/toc.css";
-
 	public static void writeSection(
 		Writer out,
 		ElementContext context,
