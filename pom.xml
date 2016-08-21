@@ -39,15 +39,6 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 	<url>https://semanticcms.com/docs/semanticcms-section-servlet/</url>
 	<description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</description>
 
-	<developers>
-		<developer>
-			<name>AO Industries, Inc.</name>
-			<email>support@aoindustries.com</email>
-			<organization>AO Industries, Inc.</organization>
-			<organizationUrl>https://www.aoindustries.com/</organizationUrl>
-		</developer>
-	</developers>
-
 	<scm>
 		<connection>scm:git:git://github.com/aoindustries/semanticcms-section-servlet.git</connection>
 		<developerConnection>scm:git:git@github.com:aoindustries/semanticcms-section-servlet.git</developerConnection>
