@@ -38,6 +38,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 	<name>SemanticCMS Section Servlet</name>
 	<url>https://semanticcms.com/section/servlet/</url>
 	<description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</description>
+	<inceptionYear>2013</inceptionYear>
 
 	<scm>
 		<connection>scm:git:git://github.com/aoindustries/semanticcms-section-servlet.git</connection>
