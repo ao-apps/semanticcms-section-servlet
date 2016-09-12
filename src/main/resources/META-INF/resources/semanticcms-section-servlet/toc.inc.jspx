@@ -30,9 +30,9 @@ Arguments:
 <jsp:root
 	xmlns:ao="http://aoindustries.com/ao-taglib"
 	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:core="https://semanticcms.com/core/taglib/"
 	xmlns:fn="http://java.sun.com/jsp/jstl/functions"
 	xmlns:jsp="http://java.sun.com/JSP/Page"
-	xmlns:p="https://semanticcms.com/semanticcms-core-taglib"
 	version="2.1"
 >
 	<jsp:directive.page language="java" buffer="512kb" autoFlush="true" pageEncoding="UTF-8" session="false" />
@@ -40,10 +40,10 @@ Arguments:
 	<!-- Use explicit toc setting or determine auto mode.  In auto mode show when >= 3 total sections in page. -->
 	<c:if test="${
 		page.toc==null
-		? (fn:length(p:filterElements(page, 'com.semanticcms.section.model.Section')) ge 3)
+		? (fn:length(core:filterElements(page, 'com.semanticcms.section.model.Section')) ge 3)
 		: page.toc
 	}">
-		<c:set var="pageSections" value="${p:findTopLevelElements(page, 'com.semanticcms.section.model.Section')}" />
+		<c:set var="pageSections" value="${core:findTopLevelElements(page, 'com.semanticcms.section.model.Section')}" />
 		<c:if test="${!empty pageSections}">
 			<nav class="semanticcms-section-toc">
 				<!-- Is it OK to put h1 inside nav, this was div before? -->
@@ -53,55 +53,55 @@ Arguments:
 				<ol class="semanticcms-section-toc1ol">
 					<c:forEach var="h2" items="${pageSections}" varStatus="h2Status">
 						<li class="semanticcms-section-toc1li">
-							<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h2.id))}">
+							<ao:a href="#${fn:escapeXml(core:getRefIdInPage(page, h2.id))}">
 								<ao:out value="${h2Status.index+1}" />
 								<ao:out value=" " />
 								<ao:out value="${h2.label}" />
 							</ao:a>
 							<c:if test="${page.tocLevels ge 2}">
-								<c:set var="h2Sections" value="${p:findTopLevelElements(h2, 'com.semanticcms.section.model.Section')}" />
+								<c:set var="h2Sections" value="${core:findTopLevelElements(h2, 'com.semanticcms.section.model.Section')}" />
 								<c:if test="${!empty h2Sections}">
 									<!-- Write h3 headings -->
 									<ol class="semanticcms-section-toc2ol">
 										<c:forEach var="h3" items="${h2Sections}" varStatus="h3Status">
 											<li class="semanticcms-section-toc2li">
-												<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h3.id))}">
+												<ao:a href="#${fn:escapeXml(core:getRefIdInPage(page, h3.id))}">
 													<ao:out value="${h2Status.index+1}.${h3Status.index+1}" />
 													<ao:out value=" " />
 													<ao:out value="${h3.label}" />
 												</ao:a>
 												<c:if test="${page.tocLevels ge 3}">
-													<c:set var="h3Sections" value="${p:findTopLevelElements(h3, 'com.semanticcms.section.model.Section')}" />
+													<c:set var="h3Sections" value="${core:findTopLevelElements(h3, 'com.semanticcms.section.model.Section')}" />
 													<c:if test="${!empty h3Sections}">
 														<!-- Write h4 headings -->
 														<ol class="semanticcms-section-toc3ol">
 															<c:forEach var="h4" items="${h3Sections}" varStatus="h4Status">
 																<li class="semanticcms-section-toc3li">
-																	<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h4.id))}">
+																	<ao:a href="#${fn:escapeXml(core:getRefIdInPage(page, h4.id))}">
 																		<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}" />
 																		<ao:out value=" " />
 																		<ao:out value="${h4.label}" />
 																	</ao:a>
 																	<c:if test="${page.tocLevels ge 4}">
-																		<c:set var="h4Sections" value="${p:findTopLevelElements(h4, 'com.semanticcms.section.model.Section')}" />
+																		<c:set var="h4Sections" value="${core:findTopLevelElements(h4, 'com.semanticcms.section.model.Section')}" />
 																		<c:if test="${!empty h4Sections}">
 																			<!-- Write h5 headings -->
 																			<ol class="semanticcms-section-toc4ol">
 																				<c:forEach var="h5" items="${h4Sections}" varStatus="h5Status">
 																					<li class="semanticcms-section-toc4li">
-																						<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h5.id))}">
+																						<ao:a href="#${fn:escapeXml(core:getRefIdInPage(page, h5.id))}">
 																							<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}" />
 																							<ao:out value=" " />
 																							<ao:out value="${h5.label}" />
 																						</ao:a>
 																						<c:if test="${page.tocLevels ge 5}">
-																							<c:set var="h5Sections" value="${p:findTopLevelElements(h5, 'com.semanticcms.section.model.Section')}" />
+																							<c:set var="h5Sections" value="${core:findTopLevelElements(h5, 'com.semanticcms.section.model.Section')}" />
 																							<c:if test="${!empty h5Sections}">
 																								<!-- Write h6 headings -->
 																								<ol class="semanticcms-section-toc5ol">
 																									<c:forEach var="h6" items="${h5Sections}" varStatus="h6Status">
 																										<li class="semanticcms-section-toc5li">
-																											<ao:a href="#${fn:escapeXml(p:getRefIdInPage(page, h6.id))}">
+																											<ao:a href="#${fn:escapeXml(core:getRefIdInPage(page, h6.id))}">
 																												<ao:out value="${h2Status.index+1}.${h3Status.index+1}.${h4Status.index+1}.${h5Status.index+1}.${h6Status.index+1}" />
 																												<ao:out value=" " />
 																												<ao:out value="${h6.label}" />
