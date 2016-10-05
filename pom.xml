@@ -130,11 +130,6 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 			<version>2.0.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.aoindustries</groupId>
-			<artifactId>aocode-public</artifactId>
-			<version>1.7.0</version>
-		</dependency>
-		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-core-model</artifactId>
 			<version>1.7.1</version>
