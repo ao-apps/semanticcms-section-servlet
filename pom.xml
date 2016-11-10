@@ -36,13 +36,12 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 	<packaging>jar</packaging>
 
 	<properties>
-		<bookPath>/section/servlet</bookPath>
 		<shortTitle>Servlet</shortTitle>
 		<description.html><![CDATA[Sections nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
 	</properties>
 
 	<name>SemanticCMS Section Servlet</name>
-	<url>https://semanticcms.com${bookPath}/</url><!-- Can't inherit due to multi-module -->
+	<url>https://semanticcms.com/section/servlet/</url>
 	<description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</description>
 	<inceptionYear>2013</inceptionYear>
 
