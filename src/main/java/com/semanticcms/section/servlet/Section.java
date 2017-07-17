@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2013, 2014, 2015, 2016  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -42,15 +42,49 @@ public class Section extends Element<com.semanticcms.section.model.Section> {
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
+		com.semanticcms.section.model.Section element,
 		String label
 	) {
 		super(
 			servletContext,
 			request,
 			response,
-			new com.semanticcms.section.model.Section()
+			element
 		);
 		element.setLabel(label);
+	}
+
+	public Section(
+		ServletContext servletContext,
+		HttpServletRequest request,
+		HttpServletResponse response,
+		String label
+	) {
+		this(
+			servletContext,
+			request,
+			response,
+			new com.semanticcms.section.model.Section(),
+			label
+		);
+	}
+
+	/**
+	 * Creates a new section in the current page context.
+	 *
+	 * @see  PageContext
+	 */
+	public Section(
+		com.semanticcms.section.model.Section element,
+		String label
+	) {
+		this(
+			PageContext.getServletContext(),
+			PageContext.getRequest(),
+			PageContext.getResponse(),
+			element,
+			label
+		);
 	}
 
 	/**
