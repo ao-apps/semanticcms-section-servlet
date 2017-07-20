@@ -126,7 +126,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		<dependency>
 			<groupId>com.aoindustries</groupId>
 			<artifactId>ao-encoding</artifactId>
-			<version>1.6.0-SNAPSHOT</version>
+			<version>1.6.0</version>
 		</dependency>
 		<dependency>
 			<groupId>com.aoindustries</groupId>
