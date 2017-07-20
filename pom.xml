@@ -156,7 +156,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		<dependency>
 			<groupId>com.semanticcms</groupId>
 			<artifactId>semanticcms-section-model</artifactId>
-			<version>1.4.3-SNAPSHOT</version>
+			<version>1.4.3</version>
 		</dependency>
 	</dependencies>
 </project>
