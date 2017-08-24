@@ -24,8 +24,8 @@ package com.semanticcms.section.servlet;
 
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
+import com.semanticcms.core.pages.local.PageContext;
 import com.semanticcms.core.servlet.Element;
-import com.semanticcms.core.servlet.PageContext;
 import com.semanticcms.core.servlet.PageIndex;
 import com.semanticcms.section.servlet.impl.SectionImpl;
 import java.io.IOException;
