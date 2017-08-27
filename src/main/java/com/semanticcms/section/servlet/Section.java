@@ -25,9 +25,9 @@ package com.semanticcms.section.servlet;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.pages.local.PageContext;
+import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.core.servlet.Element;
-import com.semanticcms.core.servlet.PageIndex;
-import com.semanticcms.section.servlet.impl.SectionImpl;
+import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
 import java.io.IOException;
 import java.io.Writer;
 import javax.servlet.ServletContext;
@@ -116,6 +116,6 @@ public class Section extends Element<com.semanticcms.section.model.Section> {
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionImpl.writeSection(out, context, element, pageIndex);
+		SectionHtmlRenderer.writeSection(out, context, element, pageIndex);
 	}
 }
