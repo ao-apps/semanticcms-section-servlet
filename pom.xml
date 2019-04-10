@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
 semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
-Copyright (C) 2016, 2017  AO Industries, Inc.
+Copyright (C) 2016, 2017, 2019  AO Industries, Inc.
     support@aoindustries.com
     7262 Bull Pen Cir
     Mobile, AL 36695
@@ -44,7 +44,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		<description.html><![CDATA[Sections nested within <a target="_top" href="https://semanticcms.com/">SemanticCMS</a> pages and elements in a Servlet environment.]]></description.html>
 	</properties>
 
-	<name>SemanticCMS Section Servlet</name>
+	<name>SemanticCMS 1 Section Servlet</name>
 	<url>https://semanticcms.com/section/servlet/</url>
 	<description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</description>
 	<inceptionYear>2013</inceptionYear>
