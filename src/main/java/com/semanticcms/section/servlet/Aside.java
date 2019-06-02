@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -34,15 +34,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>
  */
-public class Section extends SectioningContent<com.semanticcms.section.model.Section> {
+public class Aside extends SectioningContent<com.semanticcms.section.model.Aside> {
 
-	public Section(
+	public Aside(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
-		com.semanticcms.section.model.Section element,
+		com.semanticcms.section.model.Aside element,
 		String label
 	) {
 		super(
@@ -54,7 +54,7 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 		);
 	}
 
-	public Section(
+	public Aside(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
@@ -64,18 +64,18 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 			servletContext,
 			request,
 			response,
-			new com.semanticcms.section.model.Section(),
+			new com.semanticcms.section.model.Aside(),
 			label
 		);
 	}
 
 	/**
-	 * Creates a new section in the current page context.
+	 * Creates a new aside in the current page context.
 	 *
 	 * @see  PageContext
 	 */
-	public Section(
-		com.semanticcms.section.model.Section element,
+	public Aside(
+		com.semanticcms.section.model.Aside element,
 		String label
 	) {
 		this(
@@ -88,11 +88,11 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 	}
 
 	/**
-	 * Creates a new section in the current page context.
+	 * Creates a new aside in the current page context.
 	 *
 	 * @see  PageContext
 	 */
-	public Section(String label) {
+	public Aside(String label) {
 		this(
 			PageContext.getServletContext(),
 			PageContext.getRequest(),
@@ -102,13 +102,13 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 	}
 
 	@Override
-	public Section id(String id) {
+	public Aside id(String id) {
 		super.id(id);
 		return this;
 	}
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeSection(out, context, element, pageIndex);
+		SectionHtmlRenderer.writeAside(out, context, element, pageIndex);
 	}
 }

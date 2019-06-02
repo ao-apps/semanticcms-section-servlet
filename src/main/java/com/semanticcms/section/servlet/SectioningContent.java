@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2019  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,11 +22,10 @@
  */
 package com.semanticcms.section.servlet;
 
-import com.semanticcms.core.model.ElementContext;
-import com.semanticcms.core.pages.local.PageContext;
-import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
+import com.semanticcms.core.pages.CaptureLevel;
+import com.semanticcms.core.renderer.html.PageIndex;
+import com.semanticcms.core.servlet.Element;
 import java.io.IOException;
-import java.io.Writer;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -36,79 +35,34 @@ import javax.servlet.jsp.SkipPageException;
 /**
  * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
  */
-public class Section extends SectioningContent<com.semanticcms.section.model.Section> {
+abstract public class SectioningContent<SC extends com.semanticcms.section.model.SectioningContent> extends Element<SC> {
 
-	public Section(
+	protected SectioningContent(
 		ServletContext servletContext,
 		HttpServletRequest request,
 		HttpServletResponse response,
-		com.semanticcms.section.model.Section element,
+		SC element,
 		String label
 	) {
 		super(
 			servletContext,
 			request,
 			response,
-			element,
-			label
+			element
 		);
-	}
-
-	public Section(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		String label
-	) {
-		this(
-			servletContext,
-			request,
-			response,
-			new com.semanticcms.section.model.Section(),
-			label
-		);
-	}
-
-	/**
-	 * Creates a new section in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Section(
-		com.semanticcms.section.model.Section element,
-		String label
-	) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			element,
-			label
-		);
-	}
-
-	/**
-	 * Creates a new section in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Section(String label) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			label
-		);
+		element.setLabel(label);
 	}
 
 	@Override
-	public Section id(String id) {
+	public SectioningContent<SC> id(String id) {
 		super.id(id);
 		return this;
 	}
 
+	protected PageIndex pageIndex;
 	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeSection(out, context, element, pageIndex);
+	protected void doBody(CaptureLevel captureLevel, Body<? super SC> body) throws ServletException, IOException, SkipPageException {
+		pageIndex = PageIndex.getCurrentPageIndex(request);
+		super.doBody(captureLevel, body);
 	}
 }
