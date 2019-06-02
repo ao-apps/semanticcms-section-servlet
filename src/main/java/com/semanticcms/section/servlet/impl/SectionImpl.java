@@ -62,13 +62,7 @@ final public class SectionImpl {
 						out,
 						Collections.singletonMap("page", page)
 					);
-				} catch(IOException e) {
-					throw e;
-				} catch(ServletException e) {
-					throw e;
-				} catch(SkipPageException e) {
-					throw e;
-				} catch(RuntimeException e) {
+				} catch(IOException | ServletException | SkipPageException | RuntimeException e) {
 					throw e;
 				} catch(Exception e) {
 					throw new ServletException(e);
