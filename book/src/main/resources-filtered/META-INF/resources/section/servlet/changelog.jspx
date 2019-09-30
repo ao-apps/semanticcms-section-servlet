@@ -36,7 +36,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-31T02:17:44-0500"
-		dateModified="2019-06-19T09:48:11-0500"
+		dateModified="2019-09-30T03:50:38-0500"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-section-servlet:pom.version}" />
@@ -54,33 +54,45 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 			>
 				<ul>
 					<li>Updated for <core:link book="/" page="/" /> 2.</li>
-					<li>
-						<p>
-							Implemented additional <ao:a href="https://www.w3.org/TR/html5/dom.html#sectioning-content">HTML 5.2 Sectioning content</ao:a>,
-							with each still acting as a section for things like page outlines and table of contents, but which use more appropriate
-							HTML 5 semantic elements:
-						</p>
-						<ol>
-							<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-section-element"><![CDATA[&lt;section&gt;]]></ao:a>
-								(this was previously the only supported type of section)
-							</li>
-							<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-nav-element"><![CDATA[&lt;nav&gt;]]></ao:a></li>
-							<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-aside-element"><![CDATA[&lt;aside&gt;]]></ao:a></li>
-						</ol>
-						<p>
-							Please note that <ao:a href="https://www.w3.org/TR/html5/sections.html#the-article-element"><![CDATA[&lt;article&gt;]]></ao:a>
-							is not included.  The article is already created by the active view, and nested articles are not supported.
-						</p>
-					</li>
-					<li>Using managed dependencies:
-						<ol>
-							<li>This project uses managed dependencies.</li>
-							<li>This project's managed dependencies may also be imported by other projects.</li>
-						</ol>
-					</li>
 				</ul>
 			</changelog:release>
 		</c:if>
+
+		<changelog:release
+			projectName="@{documented.name}"
+			version="1.5.0"
+			datePublished="2019-06-19T10:33:38-0500"
+			groupId="@{documented.groupId}"
+			artifactId="@{documented.artifactId}"
+			scmUrl="@{documented.scm.url}"
+		>
+			<ul>
+				<li>
+					<p>
+						Implemented additional <ao:a href="https://www.w3.org/TR/html5/dom.html#sectioning-content">HTML 5.2 Sectioning content</ao:a>,
+						with each still acting as a section for things like page outlines and table of contents, but which use more appropriate
+						HTML 5 semantic elements:
+					</p>
+					<ol>
+						<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-section-element"><![CDATA[&lt;section&gt;]]></ao:a>
+							(this was previously the only supported type of section)
+						</li>
+						<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-nav-element"><![CDATA[&lt;nav&gt;]]></ao:a></li>
+						<li><ao:a href="https://www.w3.org/TR/html5/sections.html#the-aside-element"><![CDATA[&lt;aside&gt;]]></ao:a></li>
+					</ol>
+					<p>
+						Please note that <ao:a href="https://www.w3.org/TR/html5/sections.html#the-article-element"><![CDATA[&lt;article&gt;]]></ao:a>
+						is not included.  The article is already created by the active view, and nested articles are not supported.
+					</p>
+				</li>
+				<li>Using managed dependencies:
+					<ol>
+						<li>This project uses managed dependencies.</li>
+						<li>This project's managed dependencies may also be imported by other projects.</li>
+					</ol>
+				</li>
+			</ul>
+		</changelog:release>
 
 		<changelog:release
 			projectName="@{documented.name}"
