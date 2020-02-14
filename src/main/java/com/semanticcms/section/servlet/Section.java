@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -22,6 +22,7 @@
  */
 package com.semanticcms.section.servlet;
 
+import com.aoindustries.html.servlet.HtmlEE;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.PageContext;
 import com.semanticcms.section.servlet.impl.SectionImpl;
@@ -109,6 +110,11 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionImpl.writeSection(out, context, element, pageIndex);
+		SectionImpl.writeSection(
+			HtmlEE.get(servletContext, request, out),
+			context,
+			element,
+			pageIndex
+		);
 	}
 }
