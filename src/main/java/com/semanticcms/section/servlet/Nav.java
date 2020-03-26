@@ -111,7 +111,7 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeNav(
-			HtmlEE.get(servletContext, request, out),
+			HtmlEE.get(servletContext, request, response, out),
 			context,
 			element,
 			pageIndex
