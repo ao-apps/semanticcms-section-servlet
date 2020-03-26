@@ -111,7 +111,7 @@ public class Aside extends SectioningContent<com.semanticcms.section.model.Aside
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionHtmlRenderer.writeAside(
-			HtmlEE.get(servletContext, request, out),
+			HtmlEE.get(servletContext, request, response, out),
 			context,
 			element,
 			pageIndex

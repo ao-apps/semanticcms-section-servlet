@@ -111,7 +111,7 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionHtmlRenderer.writeSection(
-			HtmlEE.get(servletContext, request, out),
+			HtmlEE.get(servletContext, request, response, out),
 			context,
 			element,
 			pageIndex
