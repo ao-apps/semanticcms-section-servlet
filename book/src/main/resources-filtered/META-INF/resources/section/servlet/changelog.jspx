@@ -37,7 +37,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-31T02:17:44-0500"
-		dateModified="2020-08-28T19:15:50-05:00"
+		dateModified="2020-09-02T17:22:03-05:00"
 	>
 		<!-- The current snapshot, unreleased version -->
 		<c:set var="version" value="@{com.semanticcms:semanticcms-section-servlet:pom.version}" />
@@ -64,7 +64,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 							Added <code>clear:both</code> to section elements via a new CSS class
 							<code>semanticcms-section</code>.  This make anchors to the section id navigate to the section
 							itself, and not any floated content before it.
-						<p>
+						</p>
 						<p>
 							The <code>semanticcms-section</code> class is also added to aside and nav, but no default
 							style is applied.
