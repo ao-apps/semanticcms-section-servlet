@@ -110,7 +110,8 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
 
 	@Override
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeSection(request,
+		SectionHtmlRenderer.writeSection(
+			request,
 			DocumentEE.get(servletContext, request, response, out),
 			context,
 			element,
