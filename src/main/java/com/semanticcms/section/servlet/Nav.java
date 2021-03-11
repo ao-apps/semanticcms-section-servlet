@@ -112,7 +112,7 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
 	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
 		SectionImpl.writeNav(
 			request,
-			DocumentEE.get(servletContext, request, response, out),
+			new DocumentEE(servletContext, request, response, out),
 			context,
 			element,
 			pageIndex
