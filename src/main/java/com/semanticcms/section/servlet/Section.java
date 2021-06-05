@@ -22,7 +22,7 @@
  */
 package com.semanticcms.section.servlet;
 
-import com.aoindustries.html.servlet.DocumentEE;
+import com.aoapps.html.servlet.DocumentEE;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.servlet.PageContext;
 import com.semanticcms.section.servlet.impl.SectionImpl;
