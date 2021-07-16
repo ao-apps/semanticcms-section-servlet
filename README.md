@@ -9,6 +9,7 @@
 [![license: LGPL v3](https://semanticcms.com/ao-badges/license-lgpl-3.0.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 
 [![Build](https://github.com/aoindustries/semanticcms-section-servlet/workflows/Build/badge.svg?branch=1.x)](https://github.com/aoindustries/semanticcms-section-servlet/actions?query=workflow%3ABuild)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-section-servlet/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.semanticcms/semanticcms-section-servlet)
 
 Sections nested within [SemanticCMS](https://github.com/aoindustries/semanticcms) pages and elements in a Servlet environment.
 
