@@ -37,7 +37,7 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 		shortTitle="Changelog"
 		tocLevels="1"
 		datePublished="2016-10-31T02:17:44-05:00"
-		dateModified="2021-07-06T07:48:55-05:00"
+		dateModified="2021-09-28T22:22:26-05:00"
 	>
 		<c:if test="${fn:endsWith('@{project.version}', '-SNAPSHOT') and !fn:endsWith('@{project.version}', '-POST-SNAPSHOT')}">
 			<changelog:release
@@ -47,7 +47,11 @@ along with semanticcms-section-servlet.  If not, see <http://www.gnu.org/license
 				artifactId="@{documented.artifactId}"
 				repository="@{nexusUrl}content/repositories/snapshots/"
 				scmUrl="@{project.scm.url}"
-			/>
+			>
+				<ul>
+					<li>Updated dependencies.</li>
+				</ul>
+			</changelog:release>
 		</c:if>
 
 		<changelog:release
