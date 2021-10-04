@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2019  AO Industries, Inc.
+ * Copyright (C) 2019, 2021  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -35,7 +35,7 @@ import javax.servlet.jsp.SkipPageException;
 /**
  * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
  */
-abstract public class SectioningContent<SC extends com.semanticcms.section.model.SectioningContent> extends Element<SC> {
+public abstract class SectioningContent<SC extends com.semanticcms.section.model.SectioningContent> extends Element<SC> {
 
 	protected SectioningContent(
 		ServletContext servletContext,
