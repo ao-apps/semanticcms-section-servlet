@@ -313,7 +313,7 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId><version>1.18.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
-				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.15.2-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+				<groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId><version>1.15.2${POST-SNAPSHOT}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.semanticcms</groupId><artifactId>semanticcms-section-model</artifactId><version>1.6.0${POST-SNAPSHOT}</version>
