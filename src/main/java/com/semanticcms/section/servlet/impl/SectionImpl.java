@@ -20,6 +20,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licenses/>.
  */
+
 package com.semanticcms.section.servlet.impl;
 
 import com.aoapps.html.any.AnyFlowContent;
