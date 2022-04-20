@@ -40,83 +40,83 @@ import javax.servlet.jsp.SkipPageException;
  */
 public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
 
-	public Nav(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		com.semanticcms.section.model.Nav element,
-		String label
-	) {
-		super(
-			servletContext,
-			request,
-			response,
-			element,
-			label
-		);
-	}
+  public Nav(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    com.semanticcms.section.model.Nav element,
+    String label
+  ) {
+    super(
+      servletContext,
+      request,
+      response,
+      element,
+      label
+    );
+  }
 
-	public Nav(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		String label
-	) {
-		this(
-			servletContext,
-			request,
-			response,
-			new com.semanticcms.section.model.Nav(),
-			label
-		);
-	}
+  public Nav(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    String label
+  ) {
+    this(
+      servletContext,
+      request,
+      response,
+      new com.semanticcms.section.model.Nav(),
+      label
+    );
+  }
 
-	/**
-	 * Creates a new nav in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Nav(
-		com.semanticcms.section.model.Nav element,
-		String label
-	) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			element,
-			label
-		);
-	}
+  /**
+   * Creates a new nav in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Nav(
+    com.semanticcms.section.model.Nav element,
+    String label
+  ) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      element,
+      label
+    );
+  }
 
-	/**
-	 * Creates a new nav in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Nav(String label) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			label
-		);
-	}
+  /**
+   * Creates a new nav in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Nav(String label) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      label
+    );
+  }
 
-	@Override
-	public Nav id(String id) {
-		super.id(id);
-		return this;
-	}
+  @Override
+  public Nav id(String id) {
+    super.id(id);
+    return this;
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeNav(
-			request,
-			new DocumentEE(servletContext, request, response, out),
-			context,
-			element,
-			pageIndex
-		);
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+    SectionHtmlRenderer.writeNav(
+      request,
+      new DocumentEE(servletContext, request, response, out),
+      context,
+      element,
+      pageIndex
+    );
+  }
 }

@@ -38,32 +38,32 @@ import javax.servlet.jsp.SkipPageException;
  */
 public abstract class SectioningContent<SC extends com.semanticcms.section.model.SectioningContent> extends Element<SC> {
 
-	protected SectioningContent(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		SC element,
-		String label
-	) {
-		super(
-			servletContext,
-			request,
-			response,
-			element
-		);
-		element.setLabel(label);
-	}
+  protected SectioningContent(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    SC element,
+    String label
+  ) {
+    super(
+      servletContext,
+      request,
+      response,
+      element
+    );
+    element.setLabel(label);
+  }
 
-	@Override
-	public SectioningContent<SC> id(String id) {
-		super.id(id);
-		return this;
-	}
+  @Override
+  public SectioningContent<SC> id(String id) {
+    super.id(id);
+    return this;
+  }
 
-	protected PageIndex pageIndex;
-	@Override
-	protected void doBody(CaptureLevel captureLevel, Body<? super SC> body) throws ServletException, IOException, SkipPageException {
-		pageIndex = PageIndex.getCurrentPageIndex(request);
-		super.doBody(captureLevel, body);
-	}
+  protected PageIndex pageIndex;
+  @Override
+  protected void doBody(CaptureLevel captureLevel, Body<? super SC> body) throws ServletException, IOException, SkipPageException {
+    pageIndex = PageIndex.getCurrentPageIndex(request);
+    super.doBody(captureLevel, body);
+  }
 }

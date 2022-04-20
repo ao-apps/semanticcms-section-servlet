@@ -40,83 +40,83 @@ import javax.servlet.jsp.SkipPageException;
  */
 public class Aside extends SectioningContent<com.semanticcms.section.model.Aside> {
 
-	public Aside(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		com.semanticcms.section.model.Aside element,
-		String label
-	) {
-		super(
-			servletContext,
-			request,
-			response,
-			element,
-			label
-		);
-	}
+  public Aside(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    com.semanticcms.section.model.Aside element,
+    String label
+  ) {
+    super(
+      servletContext,
+      request,
+      response,
+      element,
+      label
+    );
+  }
 
-	public Aside(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		String label
-	) {
-		this(
-			servletContext,
-			request,
-			response,
-			new com.semanticcms.section.model.Aside(),
-			label
-		);
-	}
+  public Aside(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    String label
+  ) {
+    this(
+      servletContext,
+      request,
+      response,
+      new com.semanticcms.section.model.Aside(),
+      label
+    );
+  }
 
-	/**
-	 * Creates a new aside in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Aside(
-		com.semanticcms.section.model.Aside element,
-		String label
-	) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			element,
-			label
-		);
-	}
+  /**
+   * Creates a new aside in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Aside(
+    com.semanticcms.section.model.Aside element,
+    String label
+  ) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      element,
+      label
+    );
+  }
 
-	/**
-	 * Creates a new aside in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Aside(String label) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			label
-		);
-	}
+  /**
+   * Creates a new aside in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Aside(String label) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      label
+    );
+  }
 
-	@Override
-	public Aside id(String id) {
-		super.id(id);
-		return this;
-	}
+  @Override
+  public Aside id(String id) {
+    super.id(id);
+    return this;
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionHtmlRenderer.writeAside(
-			request,
-			new DocumentEE(servletContext, request, response, out),
-			context,
-			element,
-			pageIndex
-		);
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+    SectionHtmlRenderer.writeAside(
+      request,
+      new DocumentEE(servletContext, request, response, out),
+      context,
+      element,
+      pageIndex
+    );
+  }
 }
