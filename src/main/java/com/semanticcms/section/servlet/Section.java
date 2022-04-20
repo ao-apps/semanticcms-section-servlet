@@ -40,83 +40,83 @@ import javax.servlet.jsp.SkipPageException;
  */
 public class Section extends SectioningContent<com.semanticcms.section.model.Section> {
 
-	public Section(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		com.semanticcms.section.model.Section element,
-		String label
-	) {
-		super(
-			servletContext,
-			request,
-			response,
-			element,
-			label
-		);
-	}
+  public Section(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    com.semanticcms.section.model.Section element,
+    String label
+  ) {
+    super(
+      servletContext,
+      request,
+      response,
+      element,
+      label
+    );
+  }
 
-	public Section(
-		ServletContext servletContext,
-		HttpServletRequest request,
-		HttpServletResponse response,
-		String label
-	) {
-		this(
-			servletContext,
-			request,
-			response,
-			new com.semanticcms.section.model.Section(),
-			label
-		);
-	}
+  public Section(
+    ServletContext servletContext,
+    HttpServletRequest request,
+    HttpServletResponse response,
+    String label
+  ) {
+    this(
+      servletContext,
+      request,
+      response,
+      new com.semanticcms.section.model.Section(),
+      label
+    );
+  }
 
-	/**
-	 * Creates a new section in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Section(
-		com.semanticcms.section.model.Section element,
-		String label
-	) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			element,
-			label
-		);
-	}
+  /**
+   * Creates a new section in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Section(
+    com.semanticcms.section.model.Section element,
+    String label
+  ) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      element,
+      label
+    );
+  }
 
-	/**
-	 * Creates a new section in the current page context.
-	 *
-	 * @see  PageContext
-	 */
-	public Section(String label) {
-		this(
-			PageContext.getServletContext(),
-			PageContext.getRequest(),
-			PageContext.getResponse(),
-			label
-		);
-	}
+  /**
+   * Creates a new section in the current page context.
+   *
+   * @see  PageContext
+   */
+  public Section(String label) {
+    this(
+      PageContext.getServletContext(),
+      PageContext.getRequest(),
+      PageContext.getResponse(),
+      label
+    );
+  }
 
-	@Override
-	public Section id(String id) {
-		super.id(id);
-		return this;
-	}
+  @Override
+  public Section id(String id) {
+    super.id(id);
+    return this;
+  }
 
-	@Override
-	public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
-		SectionImpl.writeSection(
-			request,
-			new DocumentEE(servletContext, request, response, out),
-			context,
-			element,
-			pageIndex
-		);
-	}
+  @Override
+  public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
+    SectionImpl.writeSection(
+      request,
+      new DocumentEE(servletContext, request, response, out),
+      context,
+      element,
+      pageIndex
+    );
+  }
 }
