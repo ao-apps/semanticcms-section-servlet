@@ -41,33 +41,33 @@ import javax.servlet.jsp.SkipPageException;
 public class Section extends SectioningContent<com.semanticcms.section.model.Section> {
 
   public Section(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    com.semanticcms.section.model.Section element,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      com.semanticcms.section.model.Section element,
+      String label
   ) {
     super(
-      servletContext,
-      request,
-      response,
-      element,
-      label
+        servletContext,
+        request,
+        response,
+        element,
+        label
     );
   }
 
   public Section(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      String label
   ) {
     this(
-      servletContext,
-      request,
-      response,
-      new com.semanticcms.section.model.Section(),
-      label
+        servletContext,
+        request,
+        response,
+        new com.semanticcms.section.model.Section(),
+        label
     );
   }
 
@@ -77,15 +77,15 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
    * @see  PageContext
    */
   public Section(
-    com.semanticcms.section.model.Section element,
-    String label
+      com.semanticcms.section.model.Section element,
+      String label
   ) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      element,
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        element,
+        label
     );
   }
 
@@ -96,10 +96,10 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
    */
   public Section(String label) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        label
     );
   }
 
@@ -112,11 +112,11 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     SectionImpl.writeSection(
-      request,
-      new DocumentEE(servletContext, request, response, out),
-      context,
-      element,
-      pageIndex
+        request,
+        new DocumentEE(servletContext, request, response, out),
+        context,
+        element,
+        pageIndex
     );
   }
 }
