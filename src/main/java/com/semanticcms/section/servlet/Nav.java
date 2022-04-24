@@ -41,33 +41,33 @@ import javax.servlet.jsp.SkipPageException;
 public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
 
   public Nav(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    com.semanticcms.section.model.Nav element,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      com.semanticcms.section.model.Nav element,
+      String label
   ) {
     super(
-      servletContext,
-      request,
-      response,
-      element,
-      label
+        servletContext,
+        request,
+        response,
+        element,
+        label
     );
   }
 
   public Nav(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      String label
   ) {
     this(
-      servletContext,
-      request,
-      response,
-      new com.semanticcms.section.model.Nav(),
-      label
+        servletContext,
+        request,
+        response,
+        new com.semanticcms.section.model.Nav(),
+        label
     );
   }
 
@@ -77,15 +77,15 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
    * @see  PageContext
    */
   public Nav(
-    com.semanticcms.section.model.Nav element,
-    String label
+      com.semanticcms.section.model.Nav element,
+      String label
   ) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      element,
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        element,
+        label
     );
   }
 
@@ -96,10 +96,10 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
    */
   public Nav(String label) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        label
     );
   }
 
@@ -112,11 +112,11 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     SectionHtmlRenderer.writeNav(
-      request,
-      new DocumentEE(servletContext, request, response, out),
-      context,
-      element,
-      pageIndex
+        request,
+        new DocumentEE(servletContext, request, response, out),
+        context,
+        element,
+        pageIndex
     );
   }
 }

@@ -41,33 +41,33 @@ import javax.servlet.jsp.SkipPageException;
 public class Aside extends SectioningContent<com.semanticcms.section.model.Aside> {
 
   public Aside(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    com.semanticcms.section.model.Aside element,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      com.semanticcms.section.model.Aside element,
+      String label
   ) {
     super(
-      servletContext,
-      request,
-      response,
-      element,
-      label
+        servletContext,
+        request,
+        response,
+        element,
+        label
     );
   }
 
   public Aside(
-    ServletContext servletContext,
-    HttpServletRequest request,
-    HttpServletResponse response,
-    String label
+      ServletContext servletContext,
+      HttpServletRequest request,
+      HttpServletResponse response,
+      String label
   ) {
     this(
-      servletContext,
-      request,
-      response,
-      new com.semanticcms.section.model.Aside(),
-      label
+        servletContext,
+        request,
+        response,
+        new com.semanticcms.section.model.Aside(),
+        label
     );
   }
 
@@ -77,15 +77,15 @@ public class Aside extends SectioningContent<com.semanticcms.section.model.Aside
    * @see  PageContext
    */
   public Aside(
-    com.semanticcms.section.model.Aside element,
-    String label
+      com.semanticcms.section.model.Aside element,
+      String label
   ) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      element,
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        element,
+        label
     );
   }
 
@@ -96,10 +96,10 @@ public class Aside extends SectioningContent<com.semanticcms.section.model.Aside
    */
   public Aside(String label) {
     this(
-      PageContext.getServletContext(),
-      PageContext.getRequest(),
-      PageContext.getResponse(),
-      label
+        PageContext.getServletContext(),
+        PageContext.getRequest(),
+        PageContext.getResponse(),
+        label
     );
   }
 
@@ -112,11 +112,11 @@ public class Aside extends SectioningContent<com.semanticcms.section.model.Aside
   @Override
   public void writeTo(Writer out, ElementContext context) throws IOException, ServletException, SkipPageException {
     SectionHtmlRenderer.writeAside(
-      request,
-      new DocumentEE(servletContext, request, response, out),
-      context,
-      element,
-      pageIndex
+        request,
+        new DocumentEE(servletContext, request, response, out),
+        context,
+        element,
+        pageIndex
     );
   }
 }
