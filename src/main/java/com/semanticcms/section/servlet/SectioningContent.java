@@ -34,15 +34,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>.
  */
-public abstract class SectioningContent<SC extends com.semanticcms.section.model.SectioningContent> extends Element<SC> {
+public abstract class SectioningContent<C extends com.semanticcms.section.model.SectioningContent> extends Element<C> {
 
   protected SectioningContent(
       ServletContext servletContext,
       HttpServletRequest request,
       HttpServletResponse response,
-      SC element,
+      C element,
       String label
   ) {
     super(
@@ -55,7 +55,7 @@ public abstract class SectioningContent<SC extends com.semanticcms.section.model
   }
 
   @Override
-  public SectioningContent<SC> id(String id) {
+  public SectioningContent<C> id(String id) {
     super.id(id);
     return this;
   }
@@ -63,7 +63,7 @@ public abstract class SectioningContent<SC extends com.semanticcms.section.model
   protected PageIndex pageIndex;
 
   @Override
-  protected void doBody(CaptureLevel captureLevel, Body<? super SC> body) throws ServletException, IOException, SkipPageException {
+  protected void doBody(CaptureLevel captureLevel, Body<? super C> body) throws ServletException, IOException, SkipPageException {
     pageIndex = PageIndex.getCurrentPageIndex(request);
     super.doBody(captureLevel, body);
   }

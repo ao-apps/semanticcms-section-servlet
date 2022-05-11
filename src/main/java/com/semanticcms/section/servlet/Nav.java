@@ -36,10 +36,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">The nav element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-nav-element">The nav element</a>.
  */
 public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
 
+  /**
+   * Creates a new nav.
+   */
   public Nav(
       ServletContext servletContext,
       HttpServletRequest request,
@@ -56,6 +59,9 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
     );
   }
 
+  /**
+   * Creates a new nav.
+   */
   public Nav(
       ServletContext servletContext,
       HttpServletRequest request,
