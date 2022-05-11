@@ -36,10 +36,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-aside-element">The aside element</a>.
  */
 public class Aside extends SectioningContent<com.semanticcms.section.model.Aside> {
 
+  /**
+   * Creates a new aside.
+   */
   public Aside(
       ServletContext servletContext,
       HttpServletRequest request,
@@ -56,6 +59,9 @@ public class Aside extends SectioningContent<com.semanticcms.section.model.Aside
     );
   }
 
+  /**
+   * Creates a new aside.
+   */
   public Aside(
       ServletContext servletContext,
       HttpServletRequest request,

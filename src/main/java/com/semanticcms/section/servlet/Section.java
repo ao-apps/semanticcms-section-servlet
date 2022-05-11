@@ -36,10 +36,13 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.jsp.SkipPageException;
 
 /**
- * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>
+ * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>.
  */
 public class Section extends SectioningContent<com.semanticcms.section.model.Section> {
 
+  /**
+   * Creates a new section.
+   */
   public Section(
       ServletContext servletContext,
       HttpServletRequest request,
@@ -56,6 +59,9 @@ public class Section extends SectioningContent<com.semanticcms.section.model.Sec
     );
   }
 
+  /**
+   * Creates a new section.
+   */
   public Section(
       ServletContext servletContext,
       HttpServletRequest request,
