@@ -36,15 +36,15 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
     <module.name>com.semanticcms.section.servlet.book</module.name>
     <!-- These values are copied from the project being documented -->
     <documented.artifactId>semanticcms-section-servlet</documented.artifactId>
-    <documented.name>SemanticCMS Section Servlet²</documented.name>
+    <documented.name>SemanticCMS Section Servlet</documented.name>
     <documented.description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</documented.description>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
 
-  <name>SemanticCMS Section Servlet² Book</name>
+  <name>SemanticCMS Section Servlet Book</name>
   <url>https://semanticcms.com/section/servlet/</url>
-  <description>Documentation for SemanticCMS Section Servlet² in SemanticCMS format.</description>
+  <description>Documentation for SemanticCMS Section Servlet in SemanticCMS format.</description>
   <inceptionYear>2013</inceptionYear>
 
   <licenses>
