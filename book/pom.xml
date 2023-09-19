@@ -41,6 +41,9 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
     <documented.artifactId>semanticcms-section-servlet</documented.artifactId>
     <documented.name>SemanticCMS Section Servlet</documented.name>
     <documented.description>Sections nested within SemanticCMS pages and elements in a Servlet environment.</documented.description>
+    <javadoc.breadcrumbs><![CDATA[<a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a>
+/ <a target="${javadoc.target}" href="https://semanticcms.com/section/">Section</a>
+/ <a target="${javadoc.target}" href="${project.url}">Servlet</a>]]></javadoc.breadcrumbs>
 
     <description.html><![CDATA[Documentation for <a target="${javadoc.target}" href="${project.url}">${documented.name}</a> in <a target="${javadoc.target}" href="https://semanticcms.com/">SemanticCMS</a> format.]]></description.html>
   </properties>
