@@ -185,6 +185,11 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
                       <includes>element-list, package-list</includes>
                       <outputDirectory>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-section-renderer-html</outputDirectory>
                     </artifactItem>
+                    <artifactItem>
+                      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><classifier>javadoc</classifier>
+                      <includes>element-list, package-list</includes>
+                      <outputDirectory>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</outputDirectory>
+                    </artifactItem>
                   </artifactItems>
                 </configuration>
               </execution>
@@ -232,6 +237,10 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
                 <offlineLink>
                   <url>https://semanticcms.com/section/renderer/html/apidocs/</url>
                   <location>${project.build.directory}/offlineLinks/com.semanticcms/semanticcms-section-renderer-html</location>
+                </offlineLink>
+                <offlineLink>
+                  <url>https://javadoc.io/doc/com.github.spotbugs/spotbugs-annotations/${com.github.spotbugs:spotbugs-annotations:jar.version}/</url>
+                  <location>${project.build.directory}/offlineLinks/com.github.spotbugs/spotbugs-annotations</location>
                 </offlineLink>
               </offlineLinks>
             </configuration>
@@ -319,6 +328,9 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
       </dependency>
       <dependency>
         <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-renderer-html</artifactId><version>2.0.0-SNAPSHOT<!-- ${POST-SNAPSHOT} --></version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId><version>4.8.3</version>
       </dependency>
       <!-- Transitive -->
       <dependency>
@@ -446,6 +458,10 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
     </dependency>
     <dependency>
       <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-renderer-html</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
+      <optional>true</optional>
     </dependency>
   </dependencies>
 </project>

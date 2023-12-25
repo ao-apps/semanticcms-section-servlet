@@ -34,4 +34,5 @@ module com.semanticcms.section.servlet {
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   requires com.semanticcms.section.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-model</artifactId>
   requires com.semanticcms.section.renderer.html; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-renderer-html</artifactId>
+  requires static com.github.spotbugs.annotations; // <groupId>com.github.spotbugs</groupId><artifactId>spotbugs-annotations</artifactId>
 }
