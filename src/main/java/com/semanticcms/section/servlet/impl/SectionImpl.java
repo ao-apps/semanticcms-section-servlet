@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022  AO Industries, Inc.
+ * Copyright (C) 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2024  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -151,6 +151,9 @@ public final class SectionImpl {
         });
   }
 
+  /**
+   * Writes the given aside.
+   */
   public static void writeAside(
       ServletRequest request,
       AnyPalpableContent<?, ?> content,
@@ -161,6 +164,9 @@ public final class SectionImpl {
     writeSectioningContent(request, content, context, aside, AnySectioningContent::aside, pageIndex);
   }
 
+  /**
+   * Writes the given nav.
+   */
   public static void writeNav(
       ServletRequest request,
       AnyPalpableContent<?, ?> content,
@@ -171,6 +177,9 @@ public final class SectionImpl {
     writeSectioningContent(request, content, context, nav, AnySectioningContent::nav, pageIndex);
   }
 
+  /**
+   * Writes the given section.
+   */
   public static void writeSection(
       ServletRequest request,
       AnyPalpableContent<?, ?> content,
