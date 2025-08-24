@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2019, 2020, 2021, 2022, 2023  AO Industries, Inc.
+ * Copyright (C) 2019, 2020, 2021, 2022, 2023, 2025  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -27,7 +27,6 @@ import com.aoapps.html.servlet.DocumentEE;
 import com.semanticcms.core.model.ElementContext;
 import com.semanticcms.core.pages.local.PageContext;
 import com.semanticcms.section.renderer.html.SectionHtmlRenderer;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.io.IOException;
 import java.io.Writer;
 import javax.servlet.ServletContext;
@@ -83,7 +82,6 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
    *
    * @see  PageContext
    */
-  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Nav(
       com.semanticcms.section.model.Nav element,
       String label
@@ -102,7 +100,6 @@ public class Nav extends SectioningContent<com.semanticcms.section.model.Nav> {
    *
    * @see  PageContext
    */
-  @SuppressFBWarnings("CT_CONSTRUCTOR_THROW")
   public Nav(String label) {
     this(
         PageContext.getServletContext(),
