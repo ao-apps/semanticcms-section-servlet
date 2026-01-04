@@ -1,6 +1,6 @@
 /*
  * semanticcms-section-servlet - Sections nested within SemanticCMS pages and elements in a Servlet environment.
- * Copyright (C) 2019, 2021, 2022, 2024  AO Industries, Inc.
+ * Copyright (C) 2019, 2021, 2022, 2024, 2025, 2026  AO Industries, Inc.
  *     support@aoindustries.com
  *     7262 Bull Pen Cir
  *     Mobile, AL 36695
@@ -26,12 +26,12 @@ package com.semanticcms.section.servlet;
 import com.semanticcms.core.pages.CaptureLevel;
 import com.semanticcms.core.renderer.html.PageIndex;
 import com.semanticcms.core.servlet.Element;
+import jakarta.servlet.ServletContext;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.jsp.SkipPageException;
 import java.io.IOException;
-import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.jsp.SkipPageException;
 
 /**
  * <a href="https://www.w3.org/TR/html5/sections.html#the-section-element">The section element</a>.
