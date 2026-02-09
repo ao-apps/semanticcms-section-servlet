@@ -37,7 +37,7 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
     shortTitle="Changelog"
     tocLevels="1"
     datePublished="2016-10-31T02:17:44-05:00"
-    dateModified="2026-02-01T01:03:05Z"
+    dateModified="2026-02-08T18:07:56Z"
   >
     <c:set var="latestRelease" value="2.0.0" />
     <c:if test="${
@@ -53,6 +53,10 @@ along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licens
         scmUrl="@{project.scm.url}"
       >
         <ul>
+          <li>
+            Removed <code>org.glassfish.web:jakarta.servlet.jsp.jstl</code> from runtime dependencies.  JSTL
+            implementation should only be decided by the webapp and/or container.
+          </li>
           <li>Updated for <core:link book="/" page="/" /> 2.</li>
         </ul>
       </changelog:release>
