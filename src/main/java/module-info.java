@@ -21,8 +21,6 @@
  * along with semanticcms-section-servlet.  If not, see <https://www.gnu.org/licenses/>.
  */
 module com.semanticcms.section.servlet {
-  exports com.semanticcms.section.servlet;
-  exports com.semanticcms.section.servlet.impl;
   // Direct
   requires com.aoapps.encoding; // <groupId>com.aoapps</groupId><artifactId>ao-encoding</artifactId>
   requires com.aoapps.html.any; // <groupId>com.aoapps</groupId><artifactId>ao-fluent-html-any</artifactId>
@@ -38,4 +36,7 @@ module com.semanticcms.section.servlet {
   requires com.semanticcms.core.servlet; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-servlet</artifactId>
   requires com.semanticcms.core.taglib; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-core-taglib</artifactId>
   requires com.semanticcms.section.model; // <groupId>com.semanticcms</groupId><artifactId>semanticcms-section-model</artifactId>
+
+  exports com.semanticcms.section.servlet;
+  exports com.semanticcms.section.servlet.impl;
 }
